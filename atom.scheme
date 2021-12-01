@@ -1,0 +1,37 @@
+(define atom?
+    (lambda (x)
+      (and (not (pair? x)) (not (null? x)))))
+
+(atom? 'harry) 
+(null? '())
+
+(define s '(Harry had a heap of apples))
+(atom? s)
+
+(define l '(Harry))
+(atom? l)
+
+(define a1 '(Harry))
+(define a2 '(Harry))
+(eq? a1 a2) ; #f 
+
+(define b1 'Harry)
+(define b2 'Harry)
+(eq? b1 b2) ; #t 
+
+(define c1 '())
+(define c2 '(Harry))
+(eq? c1 c2) ; #f
+
+(define n1 6)
+(define n2 7)
+(eq? n1 n2) ; #f
+
+(define n1 6)
+(define n2 7)
+(eq? n1 n2) ; #t
+
+(define l '(soured milk))
+(define a 'milk)
+(eq? (cdr l) a) ; #f массив и атом
+

@@ -1,0 +1,8 @@
+(define firsts
+    (lambda (l)
+        (cond
+            ((null? l)...)
+            (else (cons (firsts (cdr l))))
+        )
+    )
+)

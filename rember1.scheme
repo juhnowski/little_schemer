@@ -1,0 +1,21 @@
+(define rember1
+    (lambda (a lat)
+        (cond 
+            ((null? lat) (quote ()))
+            (else 
+                (cond
+                    ((eq? (car lat) a) (cdr lat))
+                    (else (cons (car lat)
+                        (rember1 a
+                               (cdr lat)
+                        )
+                    ))
+                )
+            )
+        )
+    )
+)
+
+(define l '(bacon lettuce and tomato))
+(define a 'and)
+(rember1 a l) ; (bacon lettuce tomato)
