@@ -1,0 +1,14 @@
+(define member?
+    (lambda(a lat)
+        (cond
+            ((null? lat) #f)
+            (else (or (eq? (car lat) a)
+            (member? a (cdr lat))))
+        )
+    )
+)
+
+(define l '(coffee tea milk))
+(define a 'milk)
+
+(member? a l)

@@ -13,4 +13,5 @@
 
 (null? l) ; #t
 ((null? l) #t) ; error
-(atom&? (car l))
+(atom? (car l)) ;#t
+(lat? (cdr l)) ; #t
